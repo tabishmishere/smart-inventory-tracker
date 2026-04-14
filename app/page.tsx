@@ -10,15 +10,11 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen w-full bg-surface text-on-surface font-sans overflow-hidden items-center justify-center">
-      
       {/* CENTER WRAPPER (fixes scrollbar + alignment) */}
       <div className="flex w-full max-w-6xl h-[92vh] items-center justify-center rounded-2xl overflow-hidden shadow-2xl">
-        
         {/* Left Column */}
         <div className="flex w-full md:w-[45%] flex-col justify-center px-6 lg:px-12 xl:px-20 overflow-hidden">
-          
           <div className="mx-auto w-full max-w-[380px]">
-
             {/* Logo */}
             <div className="mb-10 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container-highest">
@@ -42,7 +38,6 @@ export default function LoginPage() {
 
             {/* Segmented Control */}
             <div className="mb-8 flex rounded-full bg-surface-container p-1 shadow-inner relative overflow-hidden">
-              
               {/* Smooth slider */}
               <motion.div
                 layout
@@ -53,14 +48,14 @@ export default function LoginPage() {
 
               <button
                 onClick={() => setIsLogin(true)}
-                className="flex-1 rounded-full py-2 text-sm font-semibold text-on-surface-variant z-10"
+                className="flex-1 rounded-full py-2 text-sm font-semibold cursor-pointer text-on-surface-variant z-10"
               >
                 Login
               </button>
 
               <button
                 onClick={() => setIsLogin(false)}
-                className="flex-1 rounded-full py-2 text-sm font-semibold text-on-surface-variant z-10"
+                className="flex-1 rounded-full py-2 text-sm cursor-pointer font-semibold text-on-surface-variant z-10"
               >
                 Sign Up
               </button>
@@ -76,7 +71,6 @@ export default function LoginPage() {
                 transition={{ duration: 0.25 }}
               >
                 <form className="space-y-5">
-                  
                   {!isLogin && (
                     <div>
                       <label className="mb-1.5 block text-[11px] font-bold tracking-wider text-on-surface-variant uppercase">
@@ -107,7 +101,10 @@ export default function LoginPage() {
                         Password
                       </label>
                       {isLogin && (
-                        <a href="#" className="flex text-xs font-medium text-secondary hover:underline">
+                        <a
+                          href="#"
+                          className="flex text-xs font-medium text-secondary hover:underline"
+                        >
                           Forgot password?
                         </a>
                       )}
@@ -126,7 +123,6 @@ export default function LoginPage() {
                   >
                     {isLogin ? "Sign In" : "Sign Up"}
                   </button>
-
                 </form>
               </motion.div>
             </AnimatePresence>
@@ -143,21 +139,24 @@ export default function LoginPage() {
             }}
           >
             <h2 className="mb-5 text-4xl xl:text-5xl font-bold leading-tight tracking-tight text-white max-w-lg">
-              Never Waste <span className="italic text-secondary">Inventory</span> Again.
+              Never Waste{" "}
+              <span className="italic text-secondary">Inventory</span> Again.
             </h2>
 
             <p className="mb-10 text-base text-on-surface-variant max-w-md leading-relaxed font-medium">
-              Guardian leverages next-gen AI to track shelf life, predict demand, and automate expiry alerts before they become losses.
+              Guardian leverages next-gen AI to track shelf life, predict
+              demand, and automate expiry alerts before they become losses.
             </p>
 
             <div className="space-y-4 max-w-[420px]">
-              
               <div className="flex items-start gap-4 rounded-xl bg-surface-container-low/60 p-4 border border-outline-variant/50">
                 <div className="h-9 w-9 flex items-center justify-center rounded-full bg-surface-container-highest">
                   <Clock size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Smart Expiry Tracking</h3>
+                  <h3 className="font-bold text-white text-sm">
+                    Smart Expiry Tracking
+                  </h3>
                   <p className="text-xs text-on-surface-variant">
                     Visual heatmap of items approaching end-of-life status.
                   </p>
@@ -169,7 +168,9 @@ export default function LoginPage() {
                   <Bell size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Real-time Alerts</h3>
+                  <h3 className="font-bold text-white text-sm">
+                    Real-time Alerts
+                  </h3>
                   <p className="text-xs text-on-surface-variant">
                     Instant notifications via Slack, Email, or SMS.
                   </p>
@@ -181,17 +182,17 @@ export default function LoginPage() {
                   <Sparkles size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">AI-Powered Suggestions</h3>
+                  <h3 className="font-bold text-white text-sm">
+                    AI-Powered Suggestions
+                  </h3>
                   <p className="text-xs text-on-surface-variant">
                     Automated stock optimization and redistribution logic.
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
