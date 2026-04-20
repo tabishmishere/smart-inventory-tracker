@@ -4,9 +4,16 @@ import { useState } from "react";
 import { Package, Bell, Clock, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/dashboard");
+  };
 
   return (
     <div className="flex min-h-screen w-full bg-surface text-on-surface font-sans overflow-hidden items-center justify-center">
@@ -70,7 +77,7 @@ export default function LoginPage() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.25 }}
               >
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   {!isLogin && (
                     <div>
                       <label className="mb-1.5 block text-[11px] font-bold tracking-wider text-on-surface-variant uppercase">
